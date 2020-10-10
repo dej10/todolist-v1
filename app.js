@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 
-let todoLists = [ " Eat Food", "Drink Water" ];
+let todoLists = [];
 
 
 app.get("", function (req, res) {

@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title> 📝 Todo</title>
-		<link rel="stylesheet" href="css/styles.css">
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Oswald&display=swap" rel="stylesheet">
-		<script type="text/JavaScript">
-		//courtesy of BoogieJack.com
-		function killCopy(e){
-		return false
-		}
-		function reEnable(){
-		return true
-		}
-		document.onselectstart=new Function ("return false")
-		if (window.sidebar){
-		document.onmousedown=killCopy
-		document.onclick=reEnable
-		}
-		</script>
-	</head>
+<%- include('header'); -%>
 	<body>
 		<div class="box" id="#heading">
 			<h1> <%= dayName %> </h1>
@@ -28,13 +6,12 @@
 		<div class="box">
 			<% for (var i = 0; i<listItems.length; i++) { %>
 				<div class="item">
-					<input id="checkbox-1-1" class="regular-checkbox" type="checkbox" name="" value="">
+					<input id="option1" class="regular-checkbox" type="checkbox" name="" value="">
 					<p> <%= listItems[i] %> </p>
 				</div>
 				<% } %>
-				
-				
 			</div>
+			
 			<form  autocomplete="off" class="input" action="" method="post" accept-charset="utf-8">
 				<input type="text" name="listItem" placeholder="new item" required>
 				<button type="submit">+</button>
@@ -42,4 +19,4 @@
 			
 			
 		</body>
-	</html>
+		<%- include('footer'); -%>
